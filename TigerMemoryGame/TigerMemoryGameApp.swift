@@ -11,7 +11,7 @@ import SwiftUI
 struct TigerMemoryGameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoadingView()
         }
     }
 }

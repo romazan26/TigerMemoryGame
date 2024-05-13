@@ -8,17 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		301CB0202BF28C3F000B8A87 /* TigerMemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB01F2BF28C3F000B8A87 /* TigerMemoryGameApp.swift */; };
-		301CB0222BF28C3F000B8A87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0212BF28C3F000B8A87 /* ContentView.swift */; };
 		301CB0242BF28C41000B8A87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CB0232BF28C41000B8A87 /* Assets.xcassets */; };
 		301CB0272BF28C41000B8A87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CB0262BF28C41000B8A87 /* Preview Assets.xcassets */; };
+		301CB02F2BF28D7B000B8A87 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB02E2BF28D7B000B8A87 /* LoadingView.swift */; };
+		301CB0322BF290A1000B8A87 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0312BF290A1000B8A87 /* ProgressCircleView.swift */; };
+		301CB0352BF295DF000B8A87 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0342BF295DF000B8A87 /* MainView.swift */; };
+		301CB0382BF2A5DE000B8A87 /* AboutGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0372BF2A5DE000B8A87 /* AboutGameView.swift */; };
+		301CB03B2BF2A621000B8A87 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB03A2BF2A621000B8A87 /* SettingsView.swift */; };
+		301CB03D2BF2A812000B8A87 /* DailyBonusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB03C2BF2A812000B8A87 /* DailyBonusIcon.swift */; };
+		301CB0402BF2AF59000B8A87 /* SelectLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB03F2BF2AF59000B8A87 /* SelectLevelView.swift */; };
+		301CB0422BF2B30A000B8A87 /* LevelTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0412BF2B30A000B8A87 /* LevelTable.swift */; };
+		301CB0442BF2B332000B8A87 /* LevelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0432BF2B332000B8A87 /* LevelCellView.swift */; };
+		301CB0462BF2BC4A000B8A87 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0452BF2BC4A000B8A87 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		301CB01C2BF28C3F000B8A87 /* TigerMemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TigerMemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CB01F2BF28C3F000B8A87 /* TigerMemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TigerMemoryGameApp.swift; sourceTree = "<group>"; };
-		301CB0212BF28C3F000B8A87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		301CB0232BF28C41000B8A87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301CB0262BF28C41000B8A87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		301CB02E2BF28D7B000B8A87 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		301CB0312BF290A1000B8A87 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		301CB0342BF295DF000B8A87 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		301CB0372BF2A5DE000B8A87 /* AboutGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGameView.swift; sourceTree = "<group>"; };
+		301CB03A2BF2A621000B8A87 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		301CB03C2BF2A812000B8A87 /* DailyBonusIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBonusIcon.swift; sourceTree = "<group>"; };
+		301CB03F2BF2AF59000B8A87 /* SelectLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevelView.swift; sourceTree = "<group>"; };
+		301CB0412BF2B30A000B8A87 /* LevelTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTable.swift; sourceTree = "<group>"; };
+		301CB0432BF2B332000B8A87 /* LevelCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCellView.swift; sourceTree = "<group>"; };
+		301CB0452BF2BC4A000B8A87 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +69,13 @@
 		301CB01E2BF28C3F000B8A87 /* TigerMemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				301CB03E2BF2AF37000B8A87 /* GameView */,
+				301CB0392BF2A613000B8A87 /* Settings */,
+				301CB0362BF2A5C7000B8A87 /* AboutGame */,
+				301CB0332BF295D0000B8A87 /* MainView */,
+				301CB0302BF29078000B8A87 /* Extention */,
+				301CB02D2BF28D62000B8A87 /* Loading */,
 				301CB01F2BF28C3F000B8A87 /* TigerMemoryGameApp.swift */,
-				301CB0212BF28C3F000B8A87 /* ContentView.swift */,
 				301CB0232BF28C41000B8A87 /* Assets.xcassets */,
 				301CB0252BF28C41000B8A87 /* Preview Content */,
 			);
@@ -65,6 +88,58 @@
 				301CB0262BF28C41000B8A87 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		301CB02D2BF28D62000B8A87 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				301CB02E2BF28D7B000B8A87 /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		301CB0302BF29078000B8A87 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				301CB0312BF290A1000B8A87 /* ProgressCircleView.swift */,
+				301CB03C2BF2A812000B8A87 /* DailyBonusIcon.swift */,
+				301CB0432BF2B332000B8A87 /* LevelCellView.swift */,
+				301CB0412BF2B30A000B8A87 /* LevelTable.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		301CB0332BF295D0000B8A87 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				301CB0342BF295DF000B8A87 /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		301CB0362BF2A5C7000B8A87 /* AboutGame */ = {
+			isa = PBXGroup;
+			children = (
+				301CB0372BF2A5DE000B8A87 /* AboutGameView.swift */,
+			);
+			path = AboutGame;
+			sourceTree = "<group>";
+		};
+		301CB0392BF2A613000B8A87 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				301CB03A2BF2A621000B8A87 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		301CB03E2BF2AF37000B8A87 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				301CB03F2BF2AF59000B8A87 /* SelectLevelView.swift */,
+				301CB0452BF2BC4A000B8A87 /* GameView.swift */,
+			);
+			path = GameView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +212,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				301CB0222BF28C3F000B8A87 /* ContentView.swift in Sources */,
+				301CB0322BF290A1000B8A87 /* ProgressCircleView.swift in Sources */,
 				301CB0202BF28C3F000B8A87 /* TigerMemoryGameApp.swift in Sources */,
+				301CB0352BF295DF000B8A87 /* MainView.swift in Sources */,
+				301CB03B2BF2A621000B8A87 /* SettingsView.swift in Sources */,
+				301CB0382BF2A5DE000B8A87 /* AboutGameView.swift in Sources */,
+				301CB0462BF2BC4A000B8A87 /* GameView.swift in Sources */,
+				301CB02F2BF28D7B000B8A87 /* LoadingView.swift in Sources */,
+				301CB0402BF2AF59000B8A87 /* SelectLevelView.swift in Sources */,
+				301CB03D2BF2A812000B8A87 /* DailyBonusIcon.swift in Sources */,
+				301CB0422BF2B30A000B8A87 /* LevelTable.swift in Sources */,
+				301CB0442BF2B332000B8A87 /* LevelCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +362,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +372,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.TigerMemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,8 +396,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +406,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = home.TigerMemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
