@@ -9,30 +9,31 @@ import SwiftUI
 
 struct LevelTable: View {
     @State private var numberLevel = 0
+    @StateObject var viewModel: GameViewModel
     var body: some View {
         VStack(spacing: 20) {
             HStack(spacing: 20) {
-                LevelCellView(stateCell: .end, numderOfLevel: numberLevel + 1)
-                LevelCellView(stateCell: .end, numderOfLevel: numberLevel + 2)
-                LevelCellView(stateCell: .open, numderOfLevel: numberLevel + 3)
+                LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 1)
+                LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 2)
+                LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 3)
             }
             HStack(spacing: 20) {
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 4)
+                LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 4)
                 if numberLevel < 36 {
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 5)
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 6)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 5)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 6)
                 }
             }
             if numberLevel < 36{
                 HStack(spacing: 20) {
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 7)
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 8)
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 9)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 7)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 8)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 9)
                 }
                 HStack(spacing: 20) {
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 10)
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 11)
-                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 12)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 10)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 11)
+                    LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 12)
                 }
             }
             HStack {
@@ -66,5 +67,5 @@ struct LevelTable: View {
 }
 
 #Preview {
-    LevelTable()
+    LevelTable(viewModel: GameViewModel())
 }
