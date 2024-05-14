@@ -11,6 +11,25 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack{
+                //MARK: - Toolbar
+                HStack{
+                    NavigationLink {
+                        AboutGameView()
+                    } label: {
+                        Image(.aboutTheGame)
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    }
+                    Spacer()
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(.settings)
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    }
+                }
+                
                 //MARK: - Title
                 Text("TIGER MEMORY")
                     .foregroundStyle(.white)
@@ -52,27 +71,6 @@ struct MainView: View {
             })
             
             .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading, content: {
-                    NavigationLink {
-                        AboutGameView()
-                    } label: {
-                        Image(.aboutTheGame)
-                            .resizable()
-                            .frame(width: 80, height: 80)
-                    }
-                })
-                ToolbarItem(placement: .topBarTrailing, content: {
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Image(.settings)
-                            .resizable()
-                            .frame(width: 80, height: 80)
-                    }
-                })
-            }
-            
         }
     }
 }

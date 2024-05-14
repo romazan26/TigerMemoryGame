@@ -12,6 +12,25 @@ struct SelectLevelView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
+            //MARK: - Toolbar
+            HStack{
+                Button(action: {
+                    dismiss()
+                    }, label: {
+                    Image(.close)
+                        .resizable()
+                        .frame(width: 70, height: 70)
+                        
+                }).frame(width: 70, height: 70)
+                Spacer()
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(.settings)
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                }
+            }
             Spacer()
             
             //MARK: - Title
@@ -52,30 +71,7 @@ struct SelectLevelView: View {
         
         //MARK: - ToolBar
         .navigationBarBackButtonHidden(true)
-        .toolbar {
-            //MARK: - Close Button
-            ToolbarItem(placement: .topBarLeading, content: {
-                Button(action: {
-                    dismiss()
-                    }, label: {
-                    Image(.close)
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        
-                }).frame(width: 70, height: 70)
-                
-            })
-            //MARK: - Setting Button
-            ToolbarItem(placement: .topBarTrailing, content: {
-                NavigationLink {
-                    SettingsView()
-                } label: {
-                    Image(.settings)
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                }
-            })
-        }
+        
     }
 }
 

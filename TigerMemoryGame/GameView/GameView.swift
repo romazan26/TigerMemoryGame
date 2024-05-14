@@ -10,8 +10,38 @@ import SwiftUI
 struct GameView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
-        ZStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            //MARK: - Toolbar
+            HStack{
+                Button(action: {
+                    dismiss()
+                    }, label: {
+                    Image(.close)
+                        .resizable()
+                        .frame(width: 70, height: 70)
+                        
+                }).frame(width: 70, height: 70)
+                
+                Spacer()
+                yellowRectangle(text: "LEVEL 3")
+                yellowRectangle(text: "00:13")
+                Spacer()
+            }
+            Spacer()
+            //MARK: - Animals table
+            AnimalsTableView()
+            Spacer()
+            
+            //MARK: - Bottom bar
+            HStack(spacing: 30){
+                YellowCircleView(imageName: "alarm")
+                
+               BrownRectangle(text: "1200")
+                
+                YellowCircleView(imageName: "questionmark")
+                
+                
+            }
         }
         //MARK: - Background
         .background(content: {
@@ -22,22 +52,7 @@ struct GameView: View {
                 
 
         })
-        //MARK: - ToolBar
         .navigationBarBackButtonHidden(true)
-        .toolbar {
-            //MARK: - Close Button
-            ToolbarItem(placement: .topBarLeading, content: {
-                Button(action: {
-                    dismiss()
-                    }, label: {
-                    Image(.close)
-                        .resizable()
-                        .frame(width: 70, height: 70)
-                        
-                }).frame(width: 70, height: 70)
-                
-            })
-        }
     }
 }
 

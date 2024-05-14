@@ -20,6 +20,12 @@
 		301CB0422BF2B30A000B8A87 /* LevelTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0412BF2B30A000B8A87 /* LevelTable.swift */; };
 		301CB0442BF2B332000B8A87 /* LevelCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0432BF2B332000B8A87 /* LevelCellView.swift */; };
 		301CB0462BF2BC4A000B8A87 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB0452BF2BC4A000B8A87 /* GameView.swift */; };
+		30A64B2D2BF353B300A5543D /* yellowRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B2C2BF353B300A5543D /* yellowRectangle.swift */; };
+		30A64B2F2BF354C600A5543D /* AnimalsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B2E2BF354C500A5543D /* AnimalsTableView.swift */; };
+		30A64B312BF357BA00A5543D /* YellowCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B302BF357BA00A5543D /* YellowCircleView.swift */; };
+		30A64B332BF358A900A5543D /* BrownRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B322BF358A900A5543D /* BrownRectangle.swift */; };
+		30A64B362BF35A8900A5543D /* GameTiger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B342BF35A8900A5543D /* GameTiger.xcdatamodeld */; };
+		30A64B382BF35B3400A5543D /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B372BF35B3400A5543D /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		301CB0412BF2B30A000B8A87 /* LevelTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTable.swift; sourceTree = "<group>"; };
 		301CB0432BF2B332000B8A87 /* LevelCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCellView.swift; sourceTree = "<group>"; };
 		301CB0452BF2BC4A000B8A87 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		30A64B2C2BF353B300A5543D /* yellowRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yellowRectangle.swift; sourceTree = "<group>"; };
+		30A64B2E2BF354C500A5543D /* AnimalsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsTableView.swift; sourceTree = "<group>"; };
+		30A64B302BF357BA00A5543D /* YellowCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowCircleView.swift; sourceTree = "<group>"; };
+		30A64B322BF358A900A5543D /* BrownRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrownRectangle.swift; sourceTree = "<group>"; };
+		30A64B352BF35A8900A5543D /* GameTiger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameTiger.xcdatamodel; sourceTree = "<group>"; };
+		30A64B372BF35B3400A5543D /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 				301CB01F2BF28C3F000B8A87 /* TigerMemoryGameApp.swift */,
 				301CB0232BF28C41000B8A87 /* Assets.xcassets */,
 				301CB0252BF28C41000B8A87 /* Preview Content */,
+				30A64B342BF35A8900A5543D /* GameTiger.xcdatamodeld */,
 			);
 			path = TigerMemoryGame;
 			sourceTree = "<group>";
@@ -105,6 +118,10 @@
 				301CB03C2BF2A812000B8A87 /* DailyBonusIcon.swift */,
 				301CB0432BF2B332000B8A87 /* LevelCellView.swift */,
 				301CB0412BF2B30A000B8A87 /* LevelTable.swift */,
+				30A64B2C2BF353B300A5543D /* yellowRectangle.swift */,
+				30A64B2E2BF354C500A5543D /* AnimalsTableView.swift */,
+				30A64B302BF357BA00A5543D /* YellowCircleView.swift */,
+				30A64B322BF358A900A5543D /* BrownRectangle.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -138,6 +155,7 @@
 			children = (
 				301CB03F2BF2AF59000B8A87 /* SelectLevelView.swift */,
 				301CB0452BF2BC4A000B8A87 /* GameView.swift */,
+				30A64B372BF35B3400A5543D /* GameViewModel.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -215,10 +233,16 @@
 				301CB0322BF290A1000B8A87 /* ProgressCircleView.swift in Sources */,
 				301CB0202BF28C3F000B8A87 /* TigerMemoryGameApp.swift in Sources */,
 				301CB0352BF295DF000B8A87 /* MainView.swift in Sources */,
+				30A64B362BF35A8900A5543D /* GameTiger.xcdatamodeld in Sources */,
 				301CB03B2BF2A621000B8A87 /* SettingsView.swift in Sources */,
 				301CB0382BF2A5DE000B8A87 /* AboutGameView.swift in Sources */,
+				30A64B332BF358A900A5543D /* BrownRectangle.swift in Sources */,
+				30A64B382BF35B3400A5543D /* GameViewModel.swift in Sources */,
+				30A64B2D2BF353B300A5543D /* yellowRectangle.swift in Sources */,
+				30A64B312BF357BA00A5543D /* YellowCircleView.swift in Sources */,
 				301CB0462BF2BC4A000B8A87 /* GameView.swift in Sources */,
 				301CB02F2BF28D7B000B8A87 /* LoadingView.swift in Sources */,
+				30A64B2F2BF354C600A5543D /* AnimalsTableView.swift in Sources */,
 				301CB0402BF2AF59000B8A87 /* SelectLevelView.swift in Sources */,
 				301CB03D2BF2A812000B8A87 /* DailyBonusIcon.swift in Sources */,
 				301CB0422BF2B30A000B8A87 /* LevelTable.swift in Sources */,
@@ -438,6 +462,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30A64B342BF35A8900A5543D /* GameTiger.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30A64B352BF35A8900A5543D /* GameTiger.xcdatamodel */,
+			);
+			currentVersion = 30A64B352BF35A8900A5543D /* GameTiger.xcdatamodel */;
+			name = GameTiger.xcdatamodeld;
+			path = /Users/roman/Downloads/XcodeProgramm/TigerMemoryGame/TigerMemoryGame/GameTiger.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 301CB0142BF28C3F000B8A87 /* Project object */;
 }
