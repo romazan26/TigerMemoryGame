@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct TigerMemoryGameApp: App {
+    
     var body: some Scene {
         WindowGroup {
             LoadingView()

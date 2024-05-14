@@ -9,15 +9,18 @@ import SwiftUI
 
 struct YellowCircleView: View {
     var imageName = ""
+    var circleHeight: CGFloat = 76
+    var widthImage: CGFloat = 39
+    var heightImage: CGFloat = 39
     var body: some View {
         ZStack {
             Circle()
                 .foregroundStyle(.yellowApp)
-            .frame(width: 76, height: 76)
+            .frame(width: circleHeight)
             .blur(radius: 0.5)
             Image(systemName: imageName)
                 .resizable()
-                .frame(width: 39,height: 39)
+                .frame(width: widthImage,height: heightImage)
                 .foregroundStyle(.white)
         }
     }

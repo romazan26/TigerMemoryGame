@@ -37,6 +37,9 @@ struct LevelCellView: View {
             }
         }
     }
+    private func chekStateOfLevel(){
+        
+    }
 }
 
 #Preview {

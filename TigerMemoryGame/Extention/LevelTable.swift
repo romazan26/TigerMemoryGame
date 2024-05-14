@@ -18,18 +18,22 @@ struct LevelTable: View {
             }
             HStack(spacing: 20) {
                 LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 4)
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 5)
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 6)
+                if numberLevel < 36 {
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 5)
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 6)
+                }
             }
-            HStack(spacing: 20) {
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 7)
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 8)
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 9)
-            }
-            HStack(spacing: 20) {
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 10)
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 11)
-                LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 12)
+            if numberLevel < 36{
+                HStack(spacing: 20) {
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 7)
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 8)
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 9)
+                }
+                HStack(spacing: 20) {
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 10)
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 11)
+                    LevelCellView(stateCell: .close, numderOfLevel: numberLevel + 12)
+                }
             }
             HStack {
                 if numberLevel >= 12 {

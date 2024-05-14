@@ -8,51 +8,82 @@
 import SwiftUI
 
 struct GameView: View {
+    
     @Environment(\.dismiss) var dismiss
+    
+    @State var isPresent = false
+    @State private var winGame = false
+    
+    @State private var bonusName = ""
     var body: some View {
-        VStack {
-            //MARK: - Toolbar
-            HStack{
-                Button(action: {
-                    dismiss()
+        ZStack {
+            VStack {
+                //MARK: - Toolbar
+                HStack{
+                    Button(action: {
+                        dismiss()
                     }, label: {
-                    Image(.close)
-                        .resizable()
-                        .frame(width: 70, height: 70)
+                        Image(.close)
+                            .resizable()
+                            .frame(width: 70, height: 70)
                         
-                }).frame(width: 70, height: 70)
+                    }).frame(width: 70, height: 70)
+                    
+                    Spacer()
+                    yellowRectangle(text: "LEVEL 3")
+                    yellowRectangle(text: "00:13")
+                    Spacer()
+                }
+                Spacer()
+                //MARK: - Animals table
+                AnimalsTableView()
+                Spacer()
                 
-                Spacer()
-                yellowRectangle(text: "LEVEL 3")
-                yellowRectangle(text: "00:13")
-                Spacer()
+                //MARK: - Bottom bar
+                HStack(spacing: 30){
+                    Button(action: {
+                        bonusName = "alarm"
+                        isPresent = true
+                    }, label: {
+                        YellowCircleView(imageName: "alarm")
+                    })
+                    
+                    BrownRectangle(text: "1200")
+                    
+                    Button(action: {
+                        bonusName = "questionmark"
+                        isPresent = true}, label: {
+                        YellowCircleView(imageName: "questionmark")
+                    })
+                }
             }
-            Spacer()
-            //MARK: - Animals table
-            AnimalsTableView()
-            Spacer()
             
-            //MARK: - Bottom bar
-            HStack(spacing: 30){
-                YellowCircleView(imageName: "alarm")
-                
-               BrownRectangle(text: "1200")
-                
-                YellowCircleView(imageName: "questionmark")
-                
-                
+            //MARK: - Bonus buy View
+            if isPresent {
+                bonusName == "alarm" ? BuyBonusView(isPresent: $isPresent, bonus: bonusName) : BuyBonusView(isPresent: $isPresent, bonus: bonusName)
+            }
+            
+            //MARK: - Winner View
+            if winGame {
+                WinnerView()
+                    .onTapGesture {
+                        winGame = false
+                    }
             }
         }
+        .animation(.bouncy, value: isPresent)
+        .animation(.bouncy, value: winGame)
+        .navigationBarBackButtonHidden(true)
+        
         //MARK: - Background
         .background(content: {
             Image(.background)
                 .resizable()
                 .frame(width: 1000, height: 1072)
                 .ignoresSafeArea()
-                
-
+            
+            
         })
-        .navigationBarBackButtonHidden(true)
     }
 }
 

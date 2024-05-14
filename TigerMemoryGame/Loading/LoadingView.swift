@@ -11,6 +11,7 @@ struct LoadingView: View {
     
     @State var progress: Float = 0
     @State var isPresent = false
+    @StateObject var viewModel = GameViewModel()
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
             
@@ -46,7 +47,7 @@ struct LoadingView: View {
             
         }
         .fullScreenCover(isPresented: $isPresent, content: {
-            MainView()
+            MainView( viewModel: viewModel)
         })
         .onAppear(perform: {
             Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
@@ -54,6 +55,15 @@ struct LoadingView: View {
                     progress += 1
                 }else {
                     timer.invalidate()
+                            if viewModel.players.isEmpty {
+                                viewModel.addPlayer()
+                            }
+                    if viewModel.levels.isEmpty {
+                        for i in 1...40 {
+                            viewModel.addLevel(number: i)
+                        }
+                    }
+                        
                     isPresent = true
                 }
             }

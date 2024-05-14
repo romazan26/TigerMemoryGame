@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectLevelView: View {
     
     @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel: GameViewModel
     var body: some View {
         VStack {
             //MARK: - Toolbar
@@ -77,6 +78,6 @@ struct SelectLevelView: View {
 
 #Preview {
     NavigationView {
-        SelectLevelView()
+        SelectLevelView( viewModel: GameViewModel())
     }
 }
