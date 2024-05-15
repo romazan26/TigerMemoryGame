@@ -15,13 +15,15 @@ struct LevelCellView: View {
     
     @StateObject var viewModel: GameViewModel
     @State private var stateCell = StateLevelCell.close
+    
+    
     var numderOfLevel = 0
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
                 .frame(width: 76, height: 76)
-                .foregroundStyle(.yellowApp)
+                .foregroundStyle(viewModel.chooseLevel == numderOfLevel ? .green : .yellowApp)
             switch stateCell {
             case .end:
                 Image(.star)
@@ -36,7 +38,14 @@ struct LevelCellView: View {
                     .resizable()
                 .frame(width: 33, height: 33)
             }
-        }.onAppear(perform: {
+        }
+        .onTapGesture {
+            if viewModel.players[0].level >= numderOfLevel {
+                viewModel.chooseLevel = numderOfLevel
+                
+            }
+        }
+        .onAppear(perform: {
             chekStateOfLevel()
         })
     }

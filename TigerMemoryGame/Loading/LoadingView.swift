@@ -50,7 +50,6 @@ struct LoadingView: View {
             MainView( viewModel: viewModel)
         })
         .onAppear(perform: {
-            print(viewModel.levelRules)
             Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
                 if progress < 100{
                     progress += 1

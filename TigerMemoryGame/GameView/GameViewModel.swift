@@ -12,13 +12,14 @@ final class GameViewModel: ObservableObject {
     @Published var players: [Player] = []
     @Published var levels: [Level] = []
     @Published var levelRules: [GameLevelModel] = []
+    @Published var chooseLevel = 1
     
     //MARK: - LevelRules
     func makeArray(maxLevel: Int) -> [Int]{
        var array = [Int]()
         for _ in 1...maxLevel{
             var randomNumber = Int.random(in: 1...12)
-           while let index = array.firstIndex(where: { $0 == randomNumber}){
+            while array.firstIndex(where: { $0 == randomNumber}) != nil{
                randomNumber = Int.random(in: 1...12)
            }
                array.append(randomNumber)

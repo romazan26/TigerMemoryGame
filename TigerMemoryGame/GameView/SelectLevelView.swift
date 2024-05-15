@@ -47,7 +47,7 @@ struct SelectLevelView: View {
             
             //MARK: - Start Button
             NavigationLink {
-                GameView()
+                GameView(viewModel: viewModel)
             } label: {
                 ZStack {
                     Image(.buttonBackgroun)
@@ -61,6 +61,9 @@ struct SelectLevelView: View {
         .padding()
         
         //MARK: - Background
+        .onAppear(perform: {
+            viewModel.players[0].level = 6
+        })
         .background(content: {
             Image(.background)
                 .resizable()

@@ -14,6 +14,7 @@ struct LevelTable: View {
         VStack(spacing: 20) {
             HStack(spacing: 20) {
                 LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 1)
+                    
                 LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 2)
                 LevelCellView(viewModel: viewModel, numderOfLevel: numberLevel + 3)
             }

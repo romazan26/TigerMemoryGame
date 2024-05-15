@@ -13,8 +13,9 @@ struct GameView: View {
     
     @State var isPresent = false
     @State private var winGame = false
-    
     @State private var bonusName = ""
+    
+    @StateObject var viewModel: GameViewModel
     var body: some View {
         ZStack {
             VStack {
@@ -30,7 +31,7 @@ struct GameView: View {
                     }).frame(width: 70, height: 70)
                     
                     Spacer()
-                    yellowRectangle(text: "LEVEL 3")
+                    yellowRectangle(text: "LEVEL \(viewModel.chooseLevel)")
                     yellowRectangle(text: "00:13")
                     Spacer()
                 }
@@ -89,6 +90,6 @@ struct GameView: View {
 
 #Preview {
     NavigationView {
-        GameView()
+        GameView(viewModel: GameViewModel())
     }
 }
