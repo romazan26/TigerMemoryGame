@@ -25,6 +25,7 @@
 		307EA5D02BF3CBED008F0875 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA5CF2BF3CBED008F0875 /* WinnerView.swift */; };
 		307EA5D22BF3DB6D008F0875 /* DailyBonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA5D12BF3DB6D008F0875 /* DailyBonusView.swift */; };
 		307EA5D42BF3F1CE008F0875 /* GameTiger.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 307EA5D32BF3F1CE008F0875 /* GameTiger.xcdatamodel */; };
+		307EA5D72BF3FB4A008F0875 /* GameLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EA5D62BF3FB4A008F0875 /* GameLevelModel.swift */; };
 		30A64B2D2BF353B300A5543D /* yellowRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B2C2BF353B300A5543D /* yellowRectangle.swift */; };
 		30A64B2F2BF354C600A5543D /* AnimalsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B2E2BF354C500A5543D /* AnimalsTableView.swift */; };
 		30A64B312BF357BA00A5543D /* YellowCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A64B302BF357BA00A5543D /* YellowCircleView.swift */; };
@@ -52,6 +53,7 @@
 		307EA5CF2BF3CBED008F0875 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		307EA5D12BF3DB6D008F0875 /* DailyBonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBonusView.swift; sourceTree = "<group>"; };
 		307EA5D32BF3F1CE008F0875 /* GameTiger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = GameTiger.xcdatamodel; path = GameTiger.xcdatamodeld/GameTiger.xcdatamodel; sourceTree = "<group>"; };
+		307EA5D62BF3FB4A008F0875 /* GameLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelModel.swift; sourceTree = "<group>"; };
 		30A64B2C2BF353B300A5543D /* yellowRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yellowRectangle.swift; sourceTree = "<group>"; };
 		30A64B2E2BF354C500A5543D /* AnimalsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsTableView.swift; sourceTree = "<group>"; };
 		30A64B302BF357BA00A5543D /* YellowCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowCircleView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		301CB01E2BF28C3F000B8A87 /* TigerMemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				307EA5D52BF3FB28008F0875 /* Gamemodel */,
 				307EA5D32BF3F1CE008F0875 /* GameTiger.xcdatamodel */,
 				301CB0392BF2A613000B8A87 /* Settings */,
 				301CB03E2BF2AF37000B8A87 /* GameView */,
@@ -172,6 +175,14 @@
 			path = GameView;
 			sourceTree = "<group>";
 		};
+		307EA5D52BF3FB28008F0875 /* Gamemodel */ = {
+			isa = PBXGroup;
+			children = (
+				307EA5D62BF3FB4A008F0875 /* GameLevelModel.swift */,
+			);
+			path = Gamemodel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,6 +255,7 @@
 			files = (
 				301CB0322BF290A1000B8A87 /* ProgressCircleView.swift in Sources */,
 				301CB0202BF28C3F000B8A87 /* TigerMemoryGameApp.swift in Sources */,
+				307EA5D72BF3FB4A008F0875 /* GameLevelModel.swift in Sources */,
 				301CB0352BF295DF000B8A87 /* MainView.swift in Sources */,
 				301CB03B2BF2A621000B8A87 /* SettingsView.swift in Sources */,
 				307EA5D02BF3CBED008F0875 /* WinnerView.swift in Sources */,
