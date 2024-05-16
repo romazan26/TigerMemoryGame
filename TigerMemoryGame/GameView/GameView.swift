@@ -23,6 +23,7 @@ struct GameView: View {
                 HStack{
                     Button(action: {
                         dismiss()
+                        viewModel.clean()
                     }, label: {
                         Image(.close)
                             .resizable()
@@ -32,12 +33,12 @@ struct GameView: View {
                     
                     Spacer()
                     yellowRectangle(text: "LEVEL \(viewModel.chooseLevel)")
-                    yellowRectangle(text: "00:13")
+                    yellowRectangle(text: "00:\(viewModel.time)")
                     Spacer()
                 }
                 Spacer()
                 //MARK: - Animals table
-                AnimalsTableView()
+                AnimalsTableView(viewModel: viewModel)
                 Spacer()
                 
                 //MARK: - Bottom bar
