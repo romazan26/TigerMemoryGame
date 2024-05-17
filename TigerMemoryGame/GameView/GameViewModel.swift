@@ -12,7 +12,7 @@ final class GameViewModel: ObservableObject {
     @Published var players: [Player] = []
     @Published var levels: [Level] = []
     @Published var levelRules: [GameLevelModel] = []
-    @Published var chooseLevel = 1
+    @Published var chooseLevel = 0
     
     @Published var checkAnimal1 = false
     @Published var checkAnimal2 = false
@@ -29,22 +29,34 @@ final class GameViewModel: ObservableObject {
     
     @Published var tabAnswerTag = 0
     @Published var answerArray: [Int] = []
-    @Published var gameOver = false
     @Published var winGame = false
+    @Published var lossGame = false
     
     @Published var time = 1
+    
+    //MARK: - Winner
+    func winner(){
+        players[0].money += 200
+        levels[chooseLevel + 1].completed = true
+        if players[0].level == chooseLevel + 1 {
+            players[0].level += 1
+        }
+        saveDataLevel()
+        saveData()
+        clean()
+    }
+    
     
     //MARK: - getAnswerArray
     func addAnswer(){
         answerArray.append(tabAnswerTag)
         for index in answerArray.indices {
             if answerArray[index] != levelRules[chooseLevel].rule[index]{
-                gameOver = true
+                lossGame = true
             }
         }
         if answerArray == levelRules[chooseLevel].rule {
         winGame = true
-            levels[chooseLevel].completed = true
         }
         print("answerArray: \(answerArray)")
     }
@@ -203,7 +215,7 @@ final class GameViewModel: ObservableObject {
         checkAnimal12 = false
         tabAnswerTag = 0
         answerArray = []
-        gameOver = false
+        lossGame = false
         winGame = false
     }
 }

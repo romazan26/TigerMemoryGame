@@ -61,9 +61,6 @@ struct SelectLevelView: View {
         .padding()
         
         //MARK: - Background
-        .onAppear(perform: {
-            viewModel.players[0].level = 6
-        })
         .background(content: {
             Image(.background)
                 .resizable()

@@ -11,10 +11,12 @@ struct AnimalsTableView: View {
     
     @StateObject var viewModel: GameViewModel
      @State var tagAimals = 0
+    @State private var disableButton = true
     
     var body: some View {
         VStack{
             HStack{
+                //MARK: - Tiger
                 Button(action: {
                     if viewModel.checkAnimal1 {
                         viewModel.tabAnswerTag = 1
@@ -30,6 +32,9 @@ struct AnimalsTableView: View {
                         
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
+                //MARK: - crocodile
                 Button(action: {
                     if viewModel.checkAnimal2 {
                         viewModel.tabAnswerTag = 2
@@ -44,6 +49,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
                 Button(action: {
                     if viewModel.checkAnimal3 {
                         viewModel.tabAnswerTag = 3
@@ -58,6 +65,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
             }
             HStack{
                 Button(action: {
@@ -74,6 +83,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
                 Button(action: {
                     if viewModel.checkAnimal5 {
                         viewModel.tabAnswerTag = 5
@@ -88,6 +99,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
                 Button(action: {
                     if viewModel.checkAnimal6 {
                         viewModel.tabAnswerTag = 6
@@ -102,6 +115,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
             }
             HStack{
                 Button(action: {
@@ -118,6 +133,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
                 Button(action: {
                     if viewModel.checkAnimal8 {
                         viewModel.tabAnswerTag = 8
@@ -132,6 +149,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
                 Button(action: {
                     if viewModel.checkAnimal9 {
                         viewModel.tabAnswerTag = 9
@@ -146,6 +165,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
             }
             HStack{
                 Button(action: {
@@ -162,6 +183,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
                 Button(action: {
                     if viewModel.checkAnimal11 {
                         viewModel.tabAnswerTag = 11
@@ -176,6 +199,8 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
                 Button(action: {
                     if viewModel.checkAnimal12 {
                         viewModel.tabAnswerTag = 12
@@ -190,20 +215,25 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
+                    .disabled(disableButton ? true : false)
+                
             }
         }
         .animation(.easeIn, value: tagAimals)
         .onAppear(perform: {
             print(viewModel.levelRules[viewModel.chooseLevel])
             
+            //MARK: - TimerGet Animals
             var i = 0
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 if i < viewModel.levelRules[viewModel.chooseLevel].rule.count {
                     tagAimals = viewModel.levelRules[viewModel.chooseLevel].rule[i]
                     i += 1
+                    disableButton = true
                 } else{
                     viewModel.startTimer()
                     timer.invalidate()
+                    disableButton = false
                 }
             }
         })

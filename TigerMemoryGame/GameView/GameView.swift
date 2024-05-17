@@ -43,6 +43,8 @@ struct GameView: View {
                 
                 //MARK: - Bottom bar
                 HStack(spacing: 30){
+                    
+                    //MARK: - Bonus Time
                     Button(action: {
                         bonusName = "alarm"
                         isPresent = true
@@ -50,8 +52,10 @@ struct GameView: View {
                         YellowCircleView(imageName: "alarm")
                     })
                     
-                    BrownRectangle(text: "1200")
+                    //MARK: - Many
+                    BrownRectangle(text: "\(viewModel.players[0].money)")
                     
+                    //MARK: - questbonus
                     Button(action: {
                         bonusName = "questionmark"
                         isPresent = true}, label: {
@@ -69,7 +73,17 @@ struct GameView: View {
             if viewModel.winGame {
                 WinnerView(viewModel: viewModel)
                     .onTapGesture {
-                        viewModel.winGame = false
+                        viewModel.winner()
+                        dismiss()
+                    }
+            }
+            
+            //MARK: - Loss View
+            if viewModel.lossGame {
+                LossView(viewModel: viewModel)
+                    .onTapGesture {
+                        viewModel.clean()
+                        dismiss()
                     }
             }
         }
