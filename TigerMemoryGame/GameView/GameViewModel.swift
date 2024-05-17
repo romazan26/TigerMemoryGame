@@ -35,7 +35,13 @@ final class GameViewModel: ObservableObject {
     //MARK: - getAnswerArray
     func addAnswer(){
         answerArray.append(tabAnswerTag)
-        print(answerArray)
+        for index in answerArray.indices {
+            
+            if answerArray[index] != levelRules[chooseLevel].rule[index]{
+                print("bad answer")
+            }
+        }
+        print("answerArray: \(answerArray)")
     }
     
     //MARK: - Timer

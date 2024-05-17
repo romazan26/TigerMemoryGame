@@ -32,7 +32,7 @@ struct GameView: View {
                     }).frame(width: 70, height: 70)
                     
                     Spacer()
-                    yellowRectangle(text: "LEVEL \(viewModel.chooseLevel)")
+                    yellowRectangle(text: "LEVEL \((viewModel.chooseLevel) + 1)")
                     yellowRectangle(text: "00:\(viewModel.time)")
                     Spacer()
                 }

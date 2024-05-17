@@ -23,7 +23,7 @@ struct LevelCellView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
                 .frame(width: 76, height: 76)
-                .foregroundStyle(viewModel.chooseLevel == numderOfLevel ? .green : .yellowApp)
+                .foregroundStyle(viewModel.chooseLevel == numderOfLevel - 1 ? .green : .yellowApp)
             switch stateCell {
             case .end:
                 Image(.star)
@@ -41,7 +41,7 @@ struct LevelCellView: View {
         }
         .onTapGesture {
             if viewModel.players[0].level >= numderOfLevel {
-                viewModel.chooseLevel = numderOfLevel
+                viewModel.chooseLevel = numderOfLevel - 1
                 
             }
         }
