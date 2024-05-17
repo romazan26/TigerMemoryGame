@@ -29,6 +29,8 @@ final class GameViewModel: ObservableObject {
     
     @Published var tabAnswerTag = 0
     @Published var answerArray: [Int] = []
+    @Published var gameOver = false
+    @Published var winGame = false
     
     @Published var time = 1
     
@@ -36,10 +38,13 @@ final class GameViewModel: ObservableObject {
     func addAnswer(){
         answerArray.append(tabAnswerTag)
         for index in answerArray.indices {
-            
             if answerArray[index] != levelRules[chooseLevel].rule[index]{
-                print("bad answer")
+                gameOver = true
             }
+        }
+        if answerArray == levelRules[chooseLevel].rule {
+        winGame = true
+            levels[chooseLevel].completed = true
         }
         print("answerArray: \(answerArray)")
     }
@@ -198,5 +203,7 @@ final class GameViewModel: ObservableObject {
         checkAnimal12 = false
         tabAnswerTag = 0
         answerArray = []
+        gameOver = false
+        winGame = false
     }
 }

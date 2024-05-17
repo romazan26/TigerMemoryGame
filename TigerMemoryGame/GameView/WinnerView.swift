@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WinnerView: View {
+    @StateObject var viewModel:GameViewModel
     var body: some View {
         ZStack {
             BlurUIView(style: .systemChromeMaterialDark)
@@ -39,7 +40,7 @@ struct WinnerView: View {
                             Image(systemName: "arrow.triangle.2.circlepath")
                                 .resizable()
                                 .frame(width: 35, height: 31)
-                            Text("12/12")
+                            Text("\(viewModel.answerArray.count)/\(viewModel.levelRules[viewModel.chooseLevel].rule.count)")
                         }
                     }
                     .foregroundStyle(.white)
@@ -53,5 +54,5 @@ struct WinnerView: View {
 }
 
 #Preview {
-    WinnerView()
+    WinnerView(viewModel: GameViewModel())
 }

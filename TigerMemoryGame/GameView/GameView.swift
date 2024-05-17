@@ -66,10 +66,10 @@ struct GameView: View {
             }
             
             //MARK: - Winner View
-            if winGame {
-                WinnerView()
+            if viewModel.winGame {
+                WinnerView(viewModel: viewModel)
                     .onTapGesture {
-                        winGame = false
+                        viewModel.winGame = false
                     }
             }
         }
