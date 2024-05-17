@@ -37,6 +37,7 @@ struct GameView: View {
                     Spacer()
                 }
                 Spacer()
+                
                 //MARK: - Animals table
                 AnimalsTableView(viewModel: viewModel)
                 Spacer()
@@ -50,7 +51,7 @@ struct GameView: View {
                         isPresent = true
                     }, label: {
                         YellowCircleView(imageName: "alarm")
-                    })
+                    }).disabled(viewModel.disableButton ? true : false)
                     
                     //MARK: - Many
                     BrownRectangle(text: "\(viewModel.players[0].money)")
@@ -60,13 +61,13 @@ struct GameView: View {
                         bonusName = "questionmark"
                         isPresent = true}, label: {
                         YellowCircleView(imageName: "questionmark")
-                    })
+                    }).disabled(viewModel.disableButton ? true : false)
                 }
             }
             
             //MARK: - Bonus buy View
             if isPresent {
-                bonusName == "alarm" ? BuyBonusView(isPresent: $isPresent, bonus: bonusName) : BuyBonusView(isPresent: $isPresent, bonus: bonusName)
+                bonusName == "alarm" ? BuyBonusView(viewModel: viewModel, isPresent: $isPresent, bonus: bonusName) : BuyBonusView(viewModel: viewModel, isPresent: $isPresent, bonus: bonusName)
             }
             
             //MARK: - Winner View

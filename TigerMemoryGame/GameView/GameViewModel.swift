@@ -33,6 +33,27 @@ final class GameViewModel: ObservableObject {
     @Published var lossGame = false
     
     @Published var time = 1
+    @Published var disableButton = true
+    @Published var buyAnswer = false
+    
+    //MARK: - Buy answer
+    func buyAnswerBonus(){
+//        if players[0].money >= 400 {
+//           buyAnswer = true
+//            players[0].money -= 400
+//            saveData()
+//        }
+        buyAnswer = true
+    }
+    
+    //MARK: - Buy Time
+    func buyTime(){
+        if players[0].money >= 300 {
+            time += 10
+            players[0].money -= 300
+            saveData()
+        }
+    }
     
     //MARK: - Winner
     func winner(){
@@ -47,7 +68,7 @@ final class GameViewModel: ObservableObject {
     }
     
     
-    //MARK: - getAnswerArray
+    //MARK: - ADD AnswerArray
     func addAnswer(){
         answerArray.append(tabAnswerTag)
         for index in answerArray.indices {
@@ -58,6 +79,7 @@ final class GameViewModel: ObservableObject {
         if answerArray == levelRules[chooseLevel].rule {
         winGame = true
         }
+        buyAnswer = false
         print("answerArray: \(answerArray)")
     }
     
@@ -69,6 +91,7 @@ final class GameViewModel: ObservableObject {
                 self.time -= 1
             } else{
                 timer.invalidate()
+                self.lossGame = true
             }
         }
     }

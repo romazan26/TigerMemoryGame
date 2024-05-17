@@ -50,9 +50,6 @@ struct LevelCellView: View {
         })
     }
     private func chekStateOfLevel(){
-        print("viewModel.players[0].level \(viewModel.players[0].level)")
-        print("numderOfLevel \(numderOfLevel)")
-        print("viewModel.levels[numderOfLevel].completed \(viewModel.levels[numderOfLevel].completed)")
         if viewModel.players[0].level >= numderOfLevel {
             stateCell = .open
             if viewModel.levels[numderOfLevel].completed {

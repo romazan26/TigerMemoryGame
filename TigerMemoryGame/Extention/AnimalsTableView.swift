@@ -10,8 +10,7 @@ import SwiftUI
 struct AnimalsTableView: View {
     
     @StateObject var viewModel: GameViewModel
-     @State var tagAimals = 0
-    @State private var disableButton = true
+    @State var tagAimals = 0
     
     var body: some View {
         VStack{
@@ -23,16 +22,29 @@ struct AnimalsTableView: View {
                         viewModel.addAnswer()
                     }
                 }, label: {
-                        if tagAimals == 1 || viewModel.checkAnimal1{
+                    if tagAimals == 1 || viewModel.checkAnimal1{
+                        ZStack {
                             Image(.tigertable)
                                 .resizable()
                                 .onAppear(perform: {
                                     viewModel.checkAnimal1 = true
+                            })
+                            if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 1 {
+                                Image(.tigertable)
+                                    .resizable()
+                                    .onAppear(perform: {
+                                        viewModel.checkAnimal1 = true
                                 })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                            }
+                        }
                         
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
                 //MARK: - crocodile
                 Button(action: {
@@ -42,15 +54,30 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 2 || viewModel.checkAnimal2{
-                        Image(.crocodile)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal2 = true
+                        ZStack {
+                            Image(.crocodile)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal2 = true
                             })
+                            if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 2 {
+                                Image(.crocodile)
+                                    .resizable()
+                                    .onAppear(perform: {
+                                        viewModel.checkAnimal2 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                            }
+                                
+                        }
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
+                //MARK: - sheep
                 Button(action: {
                     if viewModel.checkAnimal3 {
                         viewModel.tabAnswerTag = 3
@@ -58,14 +85,27 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 3 || viewModel.checkAnimal3{
-                        Image(.sheep)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal3 = true
-                            })
+                        ZStack{
+                            Image(.sheep)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal3 = true
+                                })
+                            if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 3 {
+                                Image(.sheep)
+                                    .resizable()
+                                    .onAppear(perform: {
+                                        viewModel.checkAnimal3 = true
+                                    })
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 11)
+                                            .stroke(.white, lineWidth: 5)
+                                    }
+                            }
+                        }
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
             }
             HStack{
@@ -83,7 +123,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
                 Button(action: {
                     if viewModel.checkAnimal5 {
@@ -99,7 +139,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
                 Button(action: {
                     if viewModel.checkAnimal6 {
@@ -115,7 +155,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
             }
             HStack{
@@ -133,7 +173,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
                 Button(action: {
                     if viewModel.checkAnimal8 {
@@ -149,7 +189,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
                 Button(action: {
                     if viewModel.checkAnimal9 {
@@ -165,7 +205,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
             }
             HStack{
@@ -183,7 +223,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
                 Button(action: {
                     if viewModel.checkAnimal11 {
@@ -199,7 +239,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
                 Button(action: {
                     if viewModel.checkAnimal12 {
@@ -215,7 +255,7 @@ struct AnimalsTableView: View {
                             })
                     }
                 }).frame(width: 105, height: 105)
-                    .disabled(disableButton ? true : false)
+                    .disabled(viewModel.disableButton ? true : false)
                 
             }
         }
@@ -229,11 +269,11 @@ struct AnimalsTableView: View {
                 if i < viewModel.levelRules[viewModel.chooseLevel].rule.count {
                     tagAimals = viewModel.levelRules[viewModel.chooseLevel].rule[i]
                     i += 1
-                    disableButton = true
+                    viewModel.disableButton = true
                 } else{
                     viewModel.startTimer()
                     timer.invalidate()
-                    disableButton = false
+                    viewModel.disableButton = false
                 }
             }
         })

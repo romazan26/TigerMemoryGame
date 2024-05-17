@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct BuyBonusView: View {
+    
+    @StateObject var viewModel: GameViewModel
     @Binding var isPresent: Bool
     var bonus = "alarm"
     var body: some View {
         ZStack {
+            
+            //MARK: - Background
             BlurUIView(style: .systemChromeMaterialDark)
                 .opacity(0.8)
                 .ignoresSafeArea()
+            
             VStack(spacing: 20){
+                
                 //MARK: - Toolbar
                 HStack{
                     Button(action: {
@@ -30,7 +36,7 @@ struct BuyBonusView: View {
                 }.padding()
                 
                 //MARK: - Many
-                BrownRectangle(text: "1200")
+                BrownRectangle(text: "\(viewModel.players[0].money)")
                 
                 //MARK: - Bonus icon
                 YellowCircleView(imageName: bonus, circleHeight: 117, widthImage: 60, heightImage: 60)
@@ -43,7 +49,14 @@ struct BuyBonusView: View {
                 
                 //MARK: - Buy button
                 Button {
+                    if bonus == "alarm"{
+                        viewModel.buyTime()
+                    }
+                    else {
+                        viewModel.buyAnswerBonus()
+                    }
                     isPresent = false
+                    
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 11)
@@ -68,5 +81,5 @@ struct BuyBonusView: View {
 }
 
 #Preview {
-    BuyBonusView(isPresent: .constant(true))
+    BuyBonusView(viewModel: GameViewModel(), isPresent: .constant(true))
 }
