@@ -109,6 +109,7 @@ struct AnimalsTableView: View {
                 
             }
             HStack{
+                //MARK: - bull
                 Button(action: {
                     if viewModel.checkAnimal4 {
                         viewModel.tabAnswerTag = 4
@@ -116,15 +117,28 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 4 || viewModel.checkAnimal4{
-                        Image(.bull)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal4 = true
-                            })
+                            if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 4 {
+                                Image(.bull)
+                                    .resizable()
+                                    .onAppear(perform: {
+                                        viewModel.checkAnimal4 = true
+                                    })
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 11)
+                                            .stroke(.white, lineWidth: 5)
+                                    }
+                            }else {
+                                Image(.bull)
+                                    .resizable()
+                                    .onAppear(perform: {
+                                        viewModel.checkAnimal4 = true
+                                    })
+                            }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
+                //MARK: - Chicken
                 Button(action: {
                     if viewModel.checkAnimal5 {
                         viewModel.tabAnswerTag = 5
@@ -132,15 +146,28 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 5 || viewModel.checkAnimal5{
-                        Image(.chicken)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal5 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 5 {
+                            Image(.chicken)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal5 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.chicken)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal5 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
+                //MARK: - Reccoon
                 Button(action: {
                     if viewModel.checkAnimal6 {
                         viewModel.tabAnswerTag = 6
@@ -148,17 +175,30 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 6 || viewModel.checkAnimal6{
-                        Image(.reccoon)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal6 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 6 {
+                            Image(.reccoon)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal6 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.reccoon)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal6 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
             }
             HStack{
+                //MARK: - Parrot
                 Button(action: {
                     if viewModel.checkAnimal7 {
                         viewModel.tabAnswerTag = 7
@@ -166,15 +206,28 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 7 || viewModel.checkAnimal7{
-                        Image(.parrot)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal7 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 7 {
+                            Image(.parrot)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal7 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.parrot)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal7 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
+                //MARK: - Snake
                 Button(action: {
                     if viewModel.checkAnimal8 {
                         viewModel.tabAnswerTag = 8
@@ -182,15 +235,28 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 8 || viewModel.checkAnimal8{
-                        Image(.snake)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal8 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 8 {
+                            Image(.snake)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal8 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.snake)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal8 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
+                //MARK: - Cow
                 Button(action: {
                     if viewModel.checkAnimal9 {
                         viewModel.tabAnswerTag = 9
@@ -198,17 +264,30 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 9 || viewModel.checkAnimal9{
-                        Image(.cow)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal9 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 9 {
+                            Image(.cow)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal9 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.cow)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal9 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
             }
             HStack{
+                //MARK: - Giraffe
                 Button(action: {
                     if viewModel.checkAnimal10 {
                         viewModel.tabAnswerTag = 10
@@ -216,15 +295,28 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 10 || viewModel.checkAnimal10{
-                        Image(.giraffe)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal10 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 10 {
+                            Image(.giraffe)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal10 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.giraffe)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal10 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
+                //MARK: - Hare
                 Button(action: {
                     if viewModel.checkAnimal11 {
                         viewModel.tabAnswerTag = 11
@@ -232,15 +324,28 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 11 || viewModel.checkAnimal11{
-                        Image(.hare)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal11 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 11 {
+                            Image(.hare)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal11 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 11)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.hare)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal11 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)
                 
+                //MARK - Pig
                 Button(action: {
                     if viewModel.checkAnimal12 {
                         viewModel.tabAnswerTag = 12
@@ -248,11 +353,23 @@ struct AnimalsTableView: View {
                     }
                 }, label: {
                     if tagAimals == 12 || viewModel.checkAnimal12{
-                        Image(.pig)
-                            .resizable()
-                            .onAppear(perform: {
-                                viewModel.checkAnimal12 = true
-                            })
+                        if viewModel.buyAnswer && viewModel.levelRules[viewModel.chooseLevel].rule[ viewModel.answerArray.count] == 12 {
+                            Image(.pig)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal6 = true
+                                })
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(.white, lineWidth: 5)
+                                }
+                        }else {
+                            Image(.pig)
+                                .resizable()
+                                .onAppear(perform: {
+                                    viewModel.checkAnimal12 = true
+                                })
+                        }
                     }
                 }).frame(width: 105, height: 105)
                     .disabled(viewModel.disableButton ? true : false)

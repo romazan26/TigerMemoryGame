@@ -36,14 +36,21 @@ final class GameViewModel: ObservableObject {
     @Published var disableButton = true
     @Published var buyAnswer = false
     
+    //MARK: - Get daily bonus
+    func getDailyBonus(){
+        players[0].dailyBonus -= 1
+        players[0].money += 200
+        
+        saveData()
+    }
+    
     //MARK: - Buy answer
     func buyAnswerBonus(){
-//        if players[0].money >= 400 {
-//           buyAnswer = true
-//            players[0].money -= 400
-//            saveData()
-//        }
-        buyAnswer = true
+        if players[0].money >= 400 {
+           buyAnswer = true
+            players[0].money -= 400
+            saveData()
+        }
     }
     
     //MARK: - Buy Time

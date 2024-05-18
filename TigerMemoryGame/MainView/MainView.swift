@@ -56,7 +56,6 @@ struct MainView: View {
                     Button(action: {
                         if viewModel.players[0].dailyBonus > 0 {
                             isPresent = true
-                            viewModel.players[0].dailyBonus -= 1
                         }
                     }, label: {
                         DailyBonusIcon(numberOfbonuses: Int(viewModel.players[0].dailyBonus))
@@ -81,6 +80,7 @@ struct MainView: View {
                     DailyBonusView()
                         .onTapGesture {
                             isPresent = false
+                            viewModel.getDailyBonus()
                         }
                 }
             }
