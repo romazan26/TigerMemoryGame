@@ -45,9 +45,9 @@ struct LevelTable: View {
                                 .foregroundStyle(.yellowApp)
                                 Image(systemName: "arrowshape.left.fill")
                                 .resizable()
-                                .frame(width: 39, height: 29)
+                                .frame(width: 25, height: 15)
                                 .foregroundStyle(.white)
-                        }.frame(width: 76)
+                        }.frame(width: 40)
                     })
                 }
                 if numberLevel < 36 {
@@ -57,13 +57,15 @@ struct LevelTable: View {
                                 .foregroundStyle(.yellowApp)
                             Image(systemName: "arrowshape.right.fill")
                                 .resizable()
-                                .frame(width: 39, height: 29)
+                                .frame(width: 25, height: 15)
                                 .foregroundStyle(.white)
-                        }.frame(width: 76)
+                        }.frame(width: 40)
                     })
                 }
             }
         }
+        
+        
     }
 }
 

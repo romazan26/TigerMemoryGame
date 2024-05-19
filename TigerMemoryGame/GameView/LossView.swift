@@ -45,7 +45,7 @@ struct LossView: View {
                             Image(systemName: "arrow.triangle.2.circlepath")
                                 .resizable()
                                 .frame(width: 35, height: 31)
-                            Text("\(viewModel.answerArray.count - 1)/\(viewModel.levelRules[viewModel.chooseLevel].rule.count)")
+                            Text("\(viewModel.answerArray.count)/\(viewModel.levelRules[viewModel.chooseLevel].rule.count)")
                         }
                     }
                     .foregroundStyle(.white)

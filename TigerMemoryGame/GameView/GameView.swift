@@ -53,7 +53,7 @@ struct GameView: View {
                         YellowCircleView(imageName: "alarm")
                     }).disabled(viewModel.disableButton ? true : false)
                     
-                    //MARK: - Many
+                    //MARK: - Money
                     BrownRectangle(text: "\(viewModel.players[0].money)")
                     
                     //MARK: - questbonus
@@ -88,6 +88,9 @@ struct GameView: View {
                     }
             }
         }
+        .onAppear(perform: {
+            viewModel.clean()
+        })
         .animation(.bouncy, value: isPresent)
         .animation(.bouncy, value: winGame)
         .navigationBarBackButtonHidden(true)

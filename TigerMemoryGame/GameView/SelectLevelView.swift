@@ -41,7 +41,9 @@ struct SelectLevelView: View {
                 .minimumScaleFactor(0.5)
             
             //MARK: - Level Table
-            LevelTable(viewModel: viewModel)
+            ScrollView {
+                LevelTable(viewModel: viewModel)
+            }
             
             Spacer()
             

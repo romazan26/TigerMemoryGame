@@ -14,7 +14,17 @@ enum StateLevelCell{
 struct LevelCellView: View {
     
     @StateObject var viewModel: GameViewModel
-    @State private var stateCell = StateLevelCell.close
+    var stateCell: StateLevelCell {
+        var state = StateLevelCell.close
+        if viewModel.players[0].level >= numderOfLevel {
+            
+            state =  StateLevelCell.open
+            if viewModel.levels[numderOfLevel].completed {
+                state = StateLevelCell.end
+            }
+        }
+        return state
+    }
     
     
     var numderOfLevel = 0
@@ -43,17 +53,6 @@ struct LevelCellView: View {
             if viewModel.players[0].level >= numderOfLevel {
                 viewModel.chooseLevel = numderOfLevel - 1
                 
-            }
-        }
-        .onAppear(perform: {
-            chekStateOfLevel()
-        })
-    }
-    private func chekStateOfLevel(){
-        if viewModel.players[0].level >= numderOfLevel {
-            stateCell = .open
-            if viewModel.levels[numderOfLevel].completed {
-                stateCell = .end
             }
         }
     }

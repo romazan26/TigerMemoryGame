@@ -32,12 +32,12 @@ final class GameViewModel: ObservableObject {
     @Published var winGame = false
     @Published var lossGame = false
     
-    @Published var time = 1
+    @Published var time = 0
     @Published var disableButton = true
     @Published var buyAnswer = false
     
     
-
+    
     
     //MARK: - Get daily bonus
     func getDailyBonus(){
@@ -56,17 +56,13 @@ final class GameViewModel: ObservableObject {
             players[0].dailyBonus += 1
             players[0].deilyBonusDate = Date()
             saveData()
-            print("get bonus")
         }
-        print("Date.now: \(Date.now)")
-        print("deilyBonusDate \(players[0].deilyBonusDate)")
-        print("futurDate \(futurDate)")
     }
     
     //MARK: - Buy answer
     func buyAnswerBonus(){
         if players[0].money >= 400 {
-           buyAnswer = true
+            buyAnswer = true
             players[0].money -= 400
             saveData()
         }
@@ -103,7 +99,7 @@ final class GameViewModel: ObservableObject {
             }
         }
         if answerArray == levelRules[chooseLevel].rule {
-        winGame = true
+            winGame = true
         }
         buyAnswer = false
         print("answerArray: \(answerArray)")
@@ -266,5 +262,6 @@ final class GameViewModel: ObservableObject {
         answerArray = []
         lossGame = false
         winGame = false
+        time = 0
     }
 }
