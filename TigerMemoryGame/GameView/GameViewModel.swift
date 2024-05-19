@@ -36,12 +36,31 @@ final class GameViewModel: ObservableObject {
     @Published var disableButton = true
     @Published var buyAnswer = false
     
+    
+
+    
     //MARK: - Get daily bonus
     func getDailyBonus(){
         players[0].dailyBonus -= 1
         players[0].money += 200
-        
         saveData()
+    }
+    
+    func checkDateDailyBonus(){
+        let futurDate: Date = Calendar.current.date(byAdding: .day, value: 1, to: players[0].deilyBonusDate ?? Date()) ?? Date()
+        if players[0].deilyBonusDate == nil {
+            players[0].deilyBonusDate = Date()
+            saveData()
+        }
+        if futurDate < Date.now{
+            players[0].dailyBonus += 1
+            players[0].deilyBonusDate = Date()
+            saveData()
+            print("get bonus")
+        }
+        print("Date.now: \(Date.now)")
+        print("deilyBonusDate \(players[0].deilyBonusDate)")
+        print("futurDate \(futurDate)")
     }
     
     //MARK: - Buy answer
@@ -216,7 +235,7 @@ final class GameViewModel: ObservableObject {
         let newPlayer = Player(context: container.viewContext)
         newPlayer.level = 1
         newPlayer.money = 0
-        newPlayer.dailyBonus = 0
+        newPlayer.dailyBonus = 1
         
         saveData()
     }

@@ -35,12 +35,13 @@ struct MainView: View {
                                 .frame(width: 80, height: 80)
                         }
                     }
+                    
                     //MARK: - Title
                     Text("TIGER MEMORY")
                         .foregroundStyle(.white)
                         .font(.system(size: 38, weight: .heavy))
                     
-                    //MARK: - Level Table
+                    //MARK: - Levels Table
                     ZStack{
                         Image(.level)
                             .resizable()
@@ -84,6 +85,9 @@ struct MainView: View {
                         }
                 }
             }
+            .onAppear(perform: {
+                viewModel.checkDateDailyBonus()
+            })
             .animation(.bouncy, value: isPresent)
             .background(content: {
                 //MARK: - Background
@@ -93,7 +97,6 @@ struct MainView: View {
                     .ignoresSafeArea()
             })
             .navigationBarBackButtonHidden(true)
-            
         }
     }
 }
